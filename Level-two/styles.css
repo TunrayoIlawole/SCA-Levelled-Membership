@@ -99,21 +99,21 @@ textarea {
     background-size: contain;
 }
 
-.form-input small {
+.form-input small, .radio-input small {
     color: #FF0000;
     position: absolute;
     visibility: hidden;
 }
 
-.form-input.error input {
+.form-input.error input, .radio-input small {
     border-color: #FF0000;
 }
 
-.form-input.success input {
+.form-input.success input, .radio-input.success input {
     border-color: #228B22;
 }
 
-.form-input.error small {
+.form-input.error small, .radio-input.error small {
     visibility: visible;
 }
 
