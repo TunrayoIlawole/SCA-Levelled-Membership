@@ -9,7 +9,72 @@
 <body>
     <div class = "container">
         <div class = "left-overlay">
-            <h1>Let's work together</h1>
+            <div class = "left-top">
+                <h1>Let's work together</h1>
+                <p>We'd love to hear from you. Send us a message using the form below, or email us!</p>
+            </div>
+            <div class = "left-bottom">
+                <form id = "form" class = "form">
+                    <div class = "text-input">
+                        <div class = "form-input">
+                            <label for = "first-name">First Name</label>
+                        <input type = "text" id = "first-name" name = "first-name" required />
+                            <small>Error Message</small>
+                        </div>
+                        <div class = "form-input">
+                            <label for = "last-name">Last Name</label>
+                            <input type = "text" id = "last-name" name = "last-name" required />
+                            <small>Error Message</small>
+                        </div>
+                    </div>
+                    <div class = "form-input">
+                        <label for = "email">Email</label>
+                        <input type = "email" id = "email" name = "email" required />
+                        <small>Error Message</small>
+                    </div>
+                    <div class = "form-input">
+                        <div class = "form-label">
+                            <label for = "phone">Phone</label>
+                            <span>Optional</span>
+                            <input type = "tel" class = "input" id = "phone" name = "phone" />
+                        </div>
+                    </div>
+                    <div class = "form-input">
+                        <div class="form-label">
+                            <label>How can we help you?</label>
+                            <p>Min 100 characters</p>
+                            <textarea required></textarea>
+                        </div>
+                    </div>
+                    <div class = "form-input radio-input">
+                        <p>Expected Budget</p>
+                        <input type = "radio" id = "lowest" name = "budget" value = "Less than 25k">
+                        <label for = "lowest">Less than $25K</label>
+                        <br />
+                        <input type = "radio" id = "low" name = "budget" value = "25k - 50k">
+                        <label for = "low">$25k - $50k</label>
+                        <br />
+                        <input type = "radio" id = "high" name = "budget" value = "50k - 100k">
+                        <label for = "high">$50k - $100k</label>
+                        <br />
+                        <input type = "radio" id = "highest" name = "budget" value = "150k">
+                        <label for = "highest">$150k</label>
+                        <small>Error Message</small>
+                    </div>
+                    <div class = "form-input">
+                        <label for = "info">How did you hear about us</label>
+                        <input type = "text" id = "info" name = "info" required />
+                        <small>Error Message</small>
+                    </div>
+
+                    <button class = "submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+
+        <div class = "right-overlay">
+            
         </div>
     </div>
     
