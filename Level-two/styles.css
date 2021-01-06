@@ -90,7 +90,6 @@ textarea {
     color: #fff;
     font-size: 1rem;
     border-radius: 5px;
-    margin-left: 85%;
 }
 
 .right-overlay {
@@ -116,4 +115,60 @@ textarea {
 
 .form-input.error small {
     visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        /* optional */
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+        margin-right: 1%;
+    }
+
+    .left-overlay {
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+        width: 100%;
+    }
+
+    .right-overlay {
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+        width: 100%;
+        height: 30vh;
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .left-top p {
+        font-size: 0.9rem;
+    }
+
+    label, .form-label span {
+        font-size: 0.8rem;
+    }
 }
