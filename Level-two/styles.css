@@ -1,0 +1,58 @@
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    column-gap: 20px;
+    padding: 10px 30px;
+}
+
+.form-input input {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+}
+
+.text-input {
+    display: grid;
+    grid-template-columns: 48% 49%;
+    column-gap: 20px;
+}
+
+
+.form-input {
+    position: relative;
+    margin-bottom: 20px;
+}
