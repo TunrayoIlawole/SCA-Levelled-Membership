@@ -34,7 +34,7 @@ button {
     display: grid;
     grid-template-columns: repeat(2, 50%);
     column-gap: 20px;
-    padding: 10px 30px;
+    padding: 20px 30px;
 }
 
 .form-input input {
@@ -55,4 +55,65 @@ button {
 .form-input {
     position: relative;
     margin-bottom: 20px;
+}
+
+.form-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.form-label span {
+    font-style: italic;
+}
+
+textarea {
+    width: 100%;
+}
+
+.radio-input p {
+    font-weight: 600;
+}
+
+.radio-input input {
+    margin-bottom: 20px;
+}
+
+.radio-input small {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.submit {
+    padding: 10px 30px;
+    background-color: blueviolet;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin-left: 85%;
+}
+
+.right-overlay {
+    background-image: url('assets/342027badddd90862de5b7a863701883.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.form-input small {
+    color: #FF0000;
+    position: absolute;
+    visibility: hidden;
+}
+
+.form-input.error input {
+    border-color: #FF0000;
+}
+
+.form-input.success input {
+    border-color: #228B22;
+}
+
+.form-input.error small {
+    visibility: visible;
 }
