@@ -117,6 +117,17 @@ textarea {
     visibility: visible;
 }
 
+.loader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid blueviolet;
+    border-bottom: 2px solid blueviolet;
+    width: 20px;
+    height: 20px;
+    -webkit-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         display: -webkit-box;
