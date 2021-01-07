@@ -7,6 +7,7 @@ const domElements = {
     phone: document.getElementById('phone'),
     message: document.querySelector('textarea'),
     budget: document.querySelectorAll('input[name="budget"]'),
+    budget1: document.getElementsByName('budget'),
     info: document.getElementById('info'),
     submit: document.querySelector('.submit')
 }
@@ -20,7 +21,7 @@ const showError = (input, message) => {
     const formInput = input.parentElement;
     formInput.className = 'form-input error';
 
-    const small = formInput.querySelector('.small');
+    const small = formInput.querySelector('small');
     small.textContent = message;
 }
 
@@ -63,3 +64,84 @@ const checkNumber = (input) => {
     }
 }
 
+// check max text 
+const checkMax = (input) => {
+    if(input.value.trim().length < 100) {
+        showError(input, 'You must enter a minimum of 100 characters');
+        return false;
+    }
+    else {
+        showSuccess(input);
+        return true;
+    }
+}
+
+let validInputs = [];
+
+// Array.from(domElements.budget).forEach(input => {
+//     input.addEventListener('click', () => {
+//         validInputs.push(input);
+//     })
+    
+// });
+
+
+const checkBudget = (inputNodes) => {
+    for (const rb of inputNodes) {
+        if (rb.checked === true) {
+            domElements.submit.disabled = false;
+        }
+        else {
+            domElements.submit.disabled = true;
+            const radioInput = document.querySelector('.radio-input');
+            radioInput.className = 'radio-input error';
+            document.querySelector('.small').textContent = 'Please select an option';
+        }
+    }
+    
+}
+
+[domElements.firstName, domElements.lastName, domElements.email, domElements.company, domElements.phone, domElements.message, domElements.info].forEach(input => {
+    input.addEventListener('change', () => {
+        if(input.required) {
+            let isValid;
+            if (input.type === 'text') {
+                isValid = checkText(input);
+            } else if (input.type === 'email') {
+                isValid = checkEmail(input);
+            } else if (input.type === 'tel') {
+                isValid = checkNumber(input)
+            } else if (input.type === 'textarea') {
+                isValid = checkMax(input) && checkBudget(domElements.budget);
+            }
+
+            if (isValid) {
+                validInputs.push(input);
+            }
+
+            if (validInputs.length >= 5) {
+                domElements.submit.disabled = false;
+            }
+            else {
+                domElements.submit.disabled = true;
+            }
+
+            console.log(validInputs);
+        }
+    })
+});
+
+// check radio buttons
+
+
+// checkBudget(domElements.budget);
+
+domElements.form.addEventListener('submit', function() {
+    checkBudget(domElements.budget);
+
+    domElements.submit.innerHTML = `<div class="loader"></div>`;
+    setTimeout(function() {
+        domElements.submit.textContent = 'Submit';
+    }, 2000);
+
+})
