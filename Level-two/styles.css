@@ -71,6 +71,10 @@ textarea {
     width: 100%;
 }
 
+.radio-input {
+    margin-bottom: 30px;
+}
+
 .radio-input p {
     font-weight: 600;
 }
@@ -99,13 +103,13 @@ textarea {
     background-size: contain;
 }
 
-.form-input small, .radio-input small {
+.form-input small, .radio-input .small {
     color: #FF0000;
     position: absolute;
     visibility: hidden;
 }
 
-.form-input.error input, .radio-input small {
+.form-input.error input, .radio-input.error .small {
     border-color: #FF0000;
 }
 
@@ -113,7 +117,7 @@ textarea {
     border-color: #228B22;
 }
 
-.form-input.error small, .radio-input.error small {
+.form-input.error small, .radio-input.error .small {
     visibility: visible;
 }
 
