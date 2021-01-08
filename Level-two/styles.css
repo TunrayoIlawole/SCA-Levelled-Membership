@@ -132,6 +132,53 @@ textarea {
     animation: spin 30s linear infinite;
 }
 
+
+/* Appreciation Page */
+.container2 {
+    width: 100%;
+    height: 100vh;
+}
+
+.appreciation {
+    text-align: center;
+    padding: 0 10px;
+    padding-top: 20vh;
+}
+
+@keyframes movingHeart {
+    0% {
+        font-size: 4rem;
+    }
+    25% {
+        font-size: 4rem;
+    }
+    50% {
+        font-size: 5rem;
+    }
+    75% {
+        font-size: 5rem;
+    }
+    100% {
+        font-size: 4rem;
+    }
+}
+
+.heart {
+    font-size: 4rem;
+    margin-bottom: 0;
+    animation: movingHeart 2s linear 0s infinite;
+    -webkit-animation: movingHeart 2s linear 0s infinite;
+}
+
+.thanks {
+    margin-top: 0;
+    font-family: 'Bungee Shade', cursive;
+    font-size: 2.5rem;
+    letter-spacing: 1px;    
+    color: blueviolet;
+    text-shadow: 5px 2px 2px plum;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         display: -webkit-box;
@@ -172,6 +219,10 @@ textarea {
         height: 30vh;
         background-size: cover;
     }
+
+    /* .appreciation {
+        margin-top: 25%;
+    } */
 }
 
 @media screen and (max-width: 540px) {
@@ -185,5 +236,15 @@ textarea {
 
     label, .form-label span {
         font-size: 0.8rem;
+    }
+
+    .thanks {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .thanks {
+        font-size: 1.5rem;
     }
 }
