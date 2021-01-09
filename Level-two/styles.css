@@ -104,7 +104,16 @@ textarea {
     color: #fff;
     font-size: 1rem;
     border-radius: 5px;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: 0s;
 }
+
+.submit:hover {
+    opacity: 0.8
+}
+
+
 
 .right-overlay {
     background-image: url('assets/342027badddd90862de5b7a863701883.jpg');
