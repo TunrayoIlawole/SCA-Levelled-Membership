@@ -67,7 +67,7 @@ const checkNumber = (input) => {
 // check max text 
 const checkMax = (input) => {
     if(input.value.trim().length < 100) {
-        showError(input, 'You must enter a minimum of 100 characters');
+        showError(input, 'Please enter a minimum of 100 characters');
         return false;
     }
     else {
@@ -78,28 +78,21 @@ const checkMax = (input) => {
 
 let validInputs = [];
 
-// Array.from(domElements.budget).forEach(input => {
-//     input.addEventListener('click', () => {
-//         validInputs.push(input);
-//     })
-    
-// });
 
-
-const checkBudget = (inputNodes) => {
-    for (const rb of inputNodes) {
-        if (rb.checked === true) {
-            domElements.submit.disabled = false;
-        }
-        else {
-            domElements.submit.disabled = true;
-            const radioInput = document.querySelector('.radio-input');
-            radioInput.className = 'radio-input error';
-            document.querySelector('.small').textContent = 'Please select an option';
-        }
-    }
+// const checkBudget = (inputNodes) => {
+//     for (const rb of inputNodes) {
+//         if (rb.checked === true) {
+//             domElements.submit.disabled = false;
+//         }
+//         else {
+//             domElements.submit.disabled = true;
+//             const radioInput = document.querySelector('.radio-input');
+//             radioInput.className = 'radio-input error';
+//             document.querySelector('.small').textContent = 'Please select an option';
+//         }
+//     }
     
-}
+// }
 
 [domElements.firstName, domElements.lastName, domElements.email, domElements.company, domElements.phone, domElements.message, domElements.info].forEach(input => {
     input.addEventListener('change', () => {
@@ -112,7 +105,7 @@ const checkBudget = (inputNodes) => {
             } else if (input.type === 'tel') {
                 isValid = checkNumber(input)
             } else if (input.type === 'textarea') {
-                isValid = checkMax(input) && checkBudget(domElements.budget);
+                isValid = checkMax(input);
             }
 
             if (isValid) {
@@ -126,18 +119,11 @@ const checkBudget = (inputNodes) => {
                 domElements.submit.disabled = true;
             }
 
-            console.log(validInputs);
         }
     })
 });
 
-// check radio buttons
-
-
-// checkBudget(domElements.budget);
-
 domElements.form.addEventListener('submit', function() {
-    checkBudget(domElements.budget);
 
     domElements.submit.innerHTML = `<div class="loader"></div>`;
     setTimeout(function() {
