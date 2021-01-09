@@ -250,7 +250,7 @@ textarea {
         font-size: 0.9rem;
     }
 
-    label, .form-label span {
+    .form-input label, .form-label span {
         font-size: 0.8rem;
     }
 
@@ -262,5 +262,13 @@ textarea {
 @media screen and (max-width: 360px) {
     .thanks {
         font-size: 1.5rem;
+    }
+
+    .form-input label, .form-label span {
+        font-size: 0.7rem;
+    }
+
+    .left-top p {
+        font-size: 0.8rem;
     }
 }
