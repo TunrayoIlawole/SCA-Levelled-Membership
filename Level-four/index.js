@@ -3,6 +3,7 @@ const domElements = {
     keys: document.querySelector('.calculator-keys')
 }
 
+// object to keep track of calculator values
 const tracker = {
     displayValue: '0',
     firstOperand: null,
@@ -11,16 +12,18 @@ const tracker = {
 }
 
 const inputDigit = (digit) => {
+    // destructure the needed properties from the tracker object
     const { displayValue, waitingForSecondOperand } = tracker;
 
+    // if a digit has been clicked on, update the display with the digit
     if (waitingForSecondOperand === true) {
         tracker.displayValue = digit;
         tracker.waitingForSecondOperand = false;
     } else {
+        // if a digit is clicked after another digit, concatenate it to the first digit
         tracker.displayValue = displayValue === '0' ? digit : displayValue + digit;
     }
 
-    console.log(tracker);
 };
 
 
@@ -41,13 +44,15 @@ const handleOperator = (nextOperator) => {
 
     if (operator && tracker.waitingForSecondOperand) {
         tracker.operator = nextOperator;
-        console.log(tracker);
         return;
     }
 
+    // if the display value is a number, and the firstOperand property is null:
     if(firstOperand == null && !isNaN(inputValue)) {
         tracker.firstOperand = inputValue;
-    } else if (operator) {
+    } 
+    // if an operator is clicked, calculate using the first operand, the operator and the digit that is clicked after it
+    else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
         tracker.displayValue = `${parseFloat(result.toFixed(7))}`;
         tracker.firstOperand = result;
@@ -73,6 +78,8 @@ const calculate = (first, second, operator) => {
     return second;
 }
 
+
+// reset the calculator to its original state
 const resetCalc = () => {
     tracker.displayValue = '0';
     tracker.firstOperand = null;
@@ -91,7 +98,10 @@ const updateDisplay = () => {
 updateDisplay();
 
 domElements.keys.addEventListener('click', (event) => {
+    // destructure the target property from the event object i.e event.target
     const { target } = event;
+
+    // destructure the value from the target object i.e target.value
     const { value } = target
 
     if (!target.matches('button')) {
