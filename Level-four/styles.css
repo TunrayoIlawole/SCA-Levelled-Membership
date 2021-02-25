@@ -7,3 +7,89 @@ html {
 *, *::after, *::before {
     box-sizing: inherit;
 }
+
+body {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+input {
+    width: 100%;
+    font-size: 1.8rem;
+    padding: 30px 10px;
+    text-align: right;
+    border-radius: 5px;
+    border: 1px solid violet;
+    background-color: darkmagenta;
+    color: #FFF;
+}
+
+button {
+    padding: 20px 10px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    outline: none;
+    border: 1px solid violet;
+    border-radius: 2px;
+    background-color: #FFF;
+    color: darkmagenta;
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+
+button:hover {
+    background-color: orchid;
+    color: #FFF;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+}
+
+.calculator {
+    width: 60%;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border: 1px solid darkviolet;
+    border-radius: 5px;
+}
+
+.calculator-keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.equal-sign {
+    grid-area: 2 / 4 / 6 / 5;
+    background-color: darkmagenta;
+    color: #FFF;
+}
+
+.equal-sign:hover {
+    background-color: orchid;
+    color: #FFF;
+}
+
+@media screen and (max-width: 780px) {
+    .calculator {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .calculator {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .calculator {
+        width: 90%;
+    }
+}
