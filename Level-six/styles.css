@@ -53,7 +53,7 @@ input {
 
 .hero, .bottom-footer {
     width: 100%;
-    padding: 10px 120px 10px 120px;
+    padding: 20px 120px 20px 120px;
 }
 
 .main-nav {
@@ -200,6 +200,7 @@ input {
 
 .bottom-footer .logo-container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -248,7 +249,7 @@ input {
 
 @media screen and (max-width: 1130px) {
     .hero, .bottom-footer {
-        padding: 10px 80px 10px 80px;
+        padding: 20px 80px 20px 80px;
     }
 
     h1, .grey {
@@ -266,7 +267,7 @@ input {
 
 @media screen and (max-width: 950px) {
     .hero, .bottom-footer {
-        padding: 10px 40px 10px 40px;
+        padding: 20px 40px 20px 40px;
     }
 
     .nav-link a {
@@ -294,7 +295,7 @@ input {
 
 @media screen and (max-width: 768px) {
     .hero, .bottom-footer {
-        padding: 10px 20px 10px 20px;
+        padding: 20px;
     }
 
     .right-nav {
